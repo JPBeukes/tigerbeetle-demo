@@ -3,7 +3,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "tb-create": "./tigerbeetle format --cluster=0 --replica=0 --replica-count=1 --development 0_0.tigerbeetle",
+    "tb-start": "./tigerbeetle start --addresses=127.0.0.1:3000 --development 0_0.tigerbeetle",
+    "tb-shell": "./tigerbeetle repl --cluster=0 --addresses=3000",
+    "tb-create-account": "tsx ./scripts/main.ts"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.1",
@@ -21,7 +25,9 @@
     "next-themes": "^0.3.0",
     "prettier": "^3.3.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tigerbeetle-node": "^0.16.11",
+    "tsx": "^4.19.2"
   },
   "devDependencies": {
     "@types/node": "20.10.6",

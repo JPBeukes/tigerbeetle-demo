@@ -5,8 +5,8 @@
     "build": "next build",
     "start": "next start",
     "tb-create": "./tigerbeetle format --cluster=0 --replica=0 --replica-count=1 --development 0_0.tigerbeetle",
-    "tb-start": "./tigerbeetle start --addresses=127.0.0.1:3000 --development 0_0.tigerbeetle",
-    "tb-shell": "./tigerbeetle repl --cluster=0 --addresses=3000",
+    "tb-start": ". .env.local && ./tigerbeetle start --addresses=$TB_ADDRESS --development 0_0.tigerbeetle",
+    "tb-shell": ". .env.local && ./tigerbeetle repl --cluster=0 --addresses=$TB_ADDRESS",
     "tb-create-account": "tsx ./scripts/main.ts"
   },
   "dependencies": {

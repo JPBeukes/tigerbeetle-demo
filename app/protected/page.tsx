@@ -1,8 +1,10 @@
+import YourAccounts from "@/components/your-accounts";
 import CreateAccount from "@/components/create-account";
 import FetchDataSteps from "@/components/tutorial/fetch-data-steps";
 import { createClient } from "@/utils/supabase/server";
 import { Mail } from "lucide-react";
 import { redirect } from "next/navigation";
+import IssuerAccounts from "@/components/issuer-accounts";
 
 export default async function ProtectedPage() {
   const supabase = await createClient();
@@ -17,15 +19,11 @@ export default async function ProtectedPage() {
 
   return (
     <div className="flex-1 w-full flex flex-col gap-12">
-      <div className="flex flex-col gap-2 items-start">
-        <h2 className="font-bold text-2xl mb-4">Account Details</h2>
-        <div className="flex items-center gap-2 text-sm ">
-          <Mail className="w-4 h-4" />
-          <p>{user.email}</p>
-        </div>
-      </div>
-      <div>
-        <h2 className="font-bold text-2xl mb-4">Create Account</h2>
+      <div className="flex flex-col gap-2 items-start space-y-6">
+        <h2 className="font-bold text-2xl">Issuer Account</h2>
+        <IssuerAccounts />
+        <h2 className="font-bold text-2xl">Your Accounts</h2>
+        <YourAccounts />
         <CreateAccount />
       </div>
     </div>
